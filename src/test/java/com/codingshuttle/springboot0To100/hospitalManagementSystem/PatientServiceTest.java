@@ -28,8 +28,14 @@ public class PatientServiceTest {
 //            System.out.println(p);
 //        }
 
-        int rowsAffected = patientRepository.updatePatientNameWithId("Anuj Sharma", 1L);
+//        int rowsAffected = patientRepository.updatePatientNameWithId("Anuj Sharma", 1L);
+//
+//        System.out.println(rowsAffected);
 
-        System.out.println(rowsAffected);
+        List<Patient> patientList = patientRepository.getAllPatientsWithAppointments();
+
+        for(var p: patientList) {
+            System.out.println(p);
+        }
     }
 }
