@@ -1,6 +1,6 @@
-package com.codingshuttle.springboot0To100.hospitalManagementSystem.entity;
+package com.coding.hospitalManagementSystem.entity;
 
-import com.codingshuttle.springboot0To100.hospitalManagementSystem.entity.type.BloodGroupType;
+import com.coding.hospitalManagementSystem.entity.type.BloodGroupType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,6 +37,10 @@ public class Patient {
     private LocalDateTime createdAt;
 
     @OneToOne
+    @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance;
+
+    @OneToMany(mappedBy = "patient")
+    private Set<Appointment> appointment = new HashSet<>();
 
 }
