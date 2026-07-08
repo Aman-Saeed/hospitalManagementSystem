@@ -1,4 +1,4 @@
-package com.codingshuttle.springboot0To100.hospitalManagementSystem;
+package com.coding.hospitalManagementSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

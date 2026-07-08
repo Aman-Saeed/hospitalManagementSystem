@@ -1,4 +1,4 @@
-package com.codingshuttle.springboot0To100.hospitalManagementSystem;
+package com.coding.hospitalManagementSystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

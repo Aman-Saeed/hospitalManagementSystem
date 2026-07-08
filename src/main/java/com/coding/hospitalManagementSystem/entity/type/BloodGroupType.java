@@ -1,4 +1,4 @@
-package com.codingshuttle.springboot0To100.hospitalManagementSystem.entity.type;
+package com.coding.hospitalManagementSystem.entity.type;
 
 public enum BloodGroupType {
     A_POSITIVE,

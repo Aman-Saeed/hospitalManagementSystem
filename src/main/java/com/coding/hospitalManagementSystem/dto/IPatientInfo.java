@@ -1,4 +1,4 @@
-package com.codingshuttle.springboot0To100.hospitalManagementSystem.dto;
+package com.coding.hospitalManagementSystem.dto;
 
 public interface IPatientInfo {
 
