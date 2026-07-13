@@ -1,10 +1,13 @@
 package com.coding.hospitalManagementSystem;
 
+import com.coding.hospitalManagementSystem.entity.Patient;
 import com.coding.hospitalManagementSystem.repository.PatientRepository;
 import com.coding.hospitalManagementSystem.service.PatientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 public class PatientServiceTest {
@@ -33,7 +36,11 @@ public class PatientServiceTest {
 //
 //        System.out.println(rowsAffected);
 
+        List<Patient> patientList = patientRepository.getAllPatientWithAppointment();
 
+        for(var p: patientList) {
+            System.out.println(p);
+        }
 
     }
 }

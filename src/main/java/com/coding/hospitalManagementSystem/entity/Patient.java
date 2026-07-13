@@ -42,7 +42,7 @@ public class Patient {
     private Insurance insurance;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
-    @ToString.Exclude
+    //@ToString.Exclude
     private Set<Appointment> appointment = new HashSet<>();
 
 }
