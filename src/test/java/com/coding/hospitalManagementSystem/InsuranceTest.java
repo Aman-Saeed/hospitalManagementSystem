@@ -5,6 +5,7 @@ import com.coding.hospitalManagementSystem.entity.Appointment;
 import com.coding.hospitalManagementSystem.entity.Insurance;
 import com.coding.hospitalManagementSystem.service.AppointmentService;
 import com.coding.hospitalManagementSystem.service.InsuranceService;
+import com.coding.hospitalManagementSystem.service.PatientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,9 @@ public class InsuranceTest {
     @Autowired
     private AppointmentService appointmentService;
 
+    @Autowired
+    private PatientService patientService;
+
     @Test
     public void testAssignInsuranceToPatient() {
         // Call the service method to assign insurance to a patient
@@ -31,6 +35,12 @@ public class InsuranceTest {
         var updatedInsurance = insuranceService.assignInsuranceToPatient(insurance,1L);
 
         System.out.println("Insurance assigned to patient: " + updatedInsurance);
+
+       // patientService.deletePatientById(1L);
+
+        var patient = insuranceService.removeInsuranceOfPatient(1L);
+        System.out.println("Insurance removed from patient: " + patient);
+
 
     }
 

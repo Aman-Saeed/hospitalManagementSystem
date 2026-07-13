@@ -36,11 +36,13 @@ public class Patient {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    // Orphan removal should add only to parent side of the relationship, so we add it to the patient side, not insurance side
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY) // Orphan removal ensures that if a patient is deleted, the associated insurance is also deleted
     @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private Set<Appointment> appointment = new HashSet<>();
 
 }
